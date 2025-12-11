@@ -1,0 +1,20 @@
+flowchart LR
+
+subgraph Developer["Developer (Writes Code)"]
+    A["Push to flask-app repo"] --> CI
+end
+
+CI["GitHub Actions CI<br/>Build & Push Image"] --> GHCR["GHCR<br/>Container Registry"]
+
+subgraph InfraRepo["Infrastructure Repo (infra-k8s)"]
+    B["Push to infra-k8s repo"] --> CD
+end
+
+CD["GitHub Actions CD<br/>Helm Upgrade"] --> K8s["Kubernetes Cluster (Minikube)"]
+
+K8s --> APP["Flask App Deployment<br/>Pods + Service"]
+APP --> Metrics["/metrics endpoint"]
+Metrics --> Prometheus["Prometheus<br/>Scrapes Metrics"]
+Prometheus --> Grafana["Grafana<br/>Dashboards"]
+Grafana --> User["User in Browser"]
+
