@@ -64,9 +64,27 @@ Custom metrics include:
 
 ## 📸 Screenshots
 
-| CI Pipeline | Grafana Dashboard | Application UI |
-|------------|------------------|----------------|
-| ![](assets/screenshots/ci.png) | ![](assets/screenshots/grafana.png) | ![](assets/screenshots/ui.png) |
+### CI/CD Pipelines
+![CI Workflow](assets/screenshots/ci-workflow-success.png)
+![CD Workflow](assets/screenshots/cd-workflow-success.png)
+
+---
+
+### Kubernetes Deployment
+![Pods Running](assets/screenshots/k8s-pods-running.png)
+![Service Details](assets/screenshots/k8s-service-details.png)
+
+---
+
+### Observability
+![Prometheus Targets](assets/screenshots/k8s-prometheus-targets.png)
+![Grafana Dashboard](assets/screenshots/grafana-custom-dashboard.png)
+
+---
+
+### Application
+![Flask Dashboard UI](assets/screenshots/flask-dashboard-ui.png)
+![Health Check](assets/screenshots/flask-healthcheck.png)
 
 ---
 
